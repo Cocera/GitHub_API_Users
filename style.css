@@ -16,6 +16,11 @@ article {
     background-color: white;
 }
 
+article>div {
+    width: 50px;
+    height: auto;
+}
+
 article>div>img {
     object-fit: cover;
 }
