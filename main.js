@@ -1,6 +1,6 @@
 const btnSearchUser = document.getElementById('btn-search-user');
 
-const getInfoUser = async (userData) => {
+const getInfoUser = async () => {
 
     try {
         const userName = document.getElementById('user-name-value');
@@ -18,14 +18,16 @@ const printUserCards = (objUser) => {
     const userCards = document.getElementById('user-cards');
     userCards.innerHTML += `
     <article>
-    <div>
+    <div id='card-header'>
         <h3>${objUser.name}</h3>
         <img src="${objUser.avatar_url}" alt="User pic of ${objUser.name}">
     </div>
-    <div>
-        <span>Followers: ${objUser.followers}</span>
-        <span>Following: ${objUser.following}</span>
-        <span>Repositories: ${objUser.public_repos}</span>
+    <div id='card-info'>
+        <div id='data_basics'>
+            <span>Followers: ${objUser.followers}</span>
+            <span>Following: ${objUser.following}</span>
+            <span>Repositories: ${objUser.public_repos}</span>
+        </div>
         <h4>GitHub's bio</h4>
         <p>${objUser.bio}</p>
         <button><a href="${objUser.html_url}">Go to profile</a></button>
